@@ -1,0 +1,6 @@
+---
+- name: Restart Java-related service
+  service:
+    name: some_java_service_name
+    state: restarted
+

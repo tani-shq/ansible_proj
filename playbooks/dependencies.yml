@@ -1,0 +1,7 @@
+---
+- name: Install Java role
+  include_role:
+    name: java
+
+
+

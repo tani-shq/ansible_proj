@@ -1,0 +1,8 @@
+---
+- name: Main Playbook
+  hosts: all
+  become: yes
+
+  tasks:
+    - include_tasks: dependencies.yml
+

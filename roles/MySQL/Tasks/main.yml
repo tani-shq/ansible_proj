@@ -1,0 +1,16 @@
+---
+- name: Ensure Java is installed
+  fail:
+    msg: "Java is not installed. MySQL cannot proceed."
+  when: not java_install_result is defined or java_install_result.failed
+
+- name: Install MySQL server
+  apt:
+    name: "{{ mysql_package }}"
+    state: present
+
+- name: Start and enable MySQL service
+  service:
+    name: mysql
+    state: started
+    enabled: yes
